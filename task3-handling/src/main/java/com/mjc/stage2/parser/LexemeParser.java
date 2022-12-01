@@ -12,9 +12,9 @@ public class LexemeParser extends AbstractTextParser {
 
     @Override
     public void parse(AbstractTextComponent abstractTextComponent, String string) {
-        String[] arr = string.split(LEXEME_REGEX);
-        for (String str : arr) {
-            abstractTextComponent.add(new TextComponent(TextComponentType.WORD));
+        char[] arr = string.toCharArray();
+        for (char ch : arr) {
+            abstractTextComponent.add(new SymbolLeaf(ch, TextComponentType.WORD));
         }
     }
 
