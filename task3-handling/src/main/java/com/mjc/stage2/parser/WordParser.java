@@ -16,9 +16,7 @@ public class WordParser extends AbstractTextParser {
         Matcher matcher = Pattern.compile(WORD_REGEX).matcher(string);
 
         while (matcher.find()) {
-            AbstractTextComponent wordComponent = new TextComponent(TextComponentType.WORD);
-            this.nextParser.parse(wordComponent, matcher.group());
-            abstractTextComponent.add(wordComponent);
+            abstractTextComponent.add(new TextComponent(TextComponentType.WORD));
         }
 
     }
